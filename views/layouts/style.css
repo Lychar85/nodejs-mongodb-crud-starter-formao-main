@@ -1,0 +1,9 @@
+.loc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-modify{
+    background-color: black;
+}

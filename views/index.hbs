@@ -1,0 +1,86 @@
+<a href="panier.hbs">panier</a>
+<div class="container-fluid">
+    <div style="display: flex; flex-direction: center; justify-content: space-around; align-items:center; height: 1000px"
+        class="row">
+        <!-- GET -->
+
+        <div class="col-md-6">
+            <h3>Liste des voitures</h3>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {{#each product}}
+                        
+                        
+                            <li class="list-group-item">
+                                
+                                <div>Marque: {{this.marque}}</div>
+                                <div>modele: {{this.modele}}</div>
+                                <div>Catégorie : {{this.category.type}}</div>
+                                <div>prix : {{this.price}}</div>
+                                <img src="{{this.image.path}}" alt="" style="max-width: 300px; margin-bottom:10px; border-radius:10px">
+                                <form action="{{this._id}}/?_method=DELETE" method="POST">
+                                    <button type="submit"
+                                        style="background: rgb(75, 0, 0); border: none; border-radius: 10px; padding: 5px; color: aliceblue">efface</button>
+                                    <button
+                                        style="background: rgb(0, 35, 75); border: none; border-radius: 10px; padding: 5px;"><a
+                                            style="color: aliceblue;" href="{{this.id}}">Modifier</a></button>
+                        
+                        
+                        </li>
+
+
+                        </form>
+                        </li>
+                        {{/each}}
+                        
+                        <form action="/?_method=PUT" method="POST">
+                            <div style="margin-top: 1rem">
+                                <button type="submit" class="btn btn-danger">tout effacer </button>
+                            </div>
+                        </form>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- POST -->
+        <div class="col-md-6">
+            <h3>Ajouter une voiture</h3>
+            <div class="card">
+                <div class="card-body">
+
+                    <form class="formajout" method="POST" action="/" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name="image">
+                        </div>
+                        <div class="form-group">
+                            <label>marque</label>
+                            <input type="text" class="form-control" name="marque">
+                        </div>
+                        <div class="form-group">
+                            <label>modele</label>
+                            <input type="text" class="form-control" name="modele">
+                        </div>
+                        <div class="form-group">
+                            <label>prix</label>
+                            <input type="text" class="form-control" name="price">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect">Catégories</label>
+                            <select class="form-control" name="category" id="exampleFormControlSelect">
+                                {{#each category}}
+                                <option value="{{this._id}}">{{this.type}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>

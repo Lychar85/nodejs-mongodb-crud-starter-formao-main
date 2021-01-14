@@ -1,0 +1,32 @@
+<div class="container">
+    <div style="display: flex; flex-direction: center; justify-content: space-around; align-items:center; height: 1000px"
+        class="row">
+        <!-- PUT -->
+        <div class="col-md-3">
+            <h1>Modification</h1>
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+
+
+                        <li class="list-group-item">
+                            <div>Marque: {{this.marque}}</div>
+                            <div>modele: {{this.modele}}</div>
+                            <div>prix : {{this.price}}</div>
+                            <form action="{{this._id}}/?_method=DELETE" method="POST">
+                                <button type="submit"
+                                    style="background: rgb(75, 0, 0); border: none; border-radius: 10px; padding: 5px; color: aliceblue">efface</button>
+                                <button
+                                    style="background: rgb(0, 35, 75); border: none; border-radius: 10px; padding: 5px;"><a
+                                        style="color: aliceblue;" href="{{this.id}}">Modifier</a></button>
+
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
