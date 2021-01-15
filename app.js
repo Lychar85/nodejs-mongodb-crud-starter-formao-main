@@ -99,14 +99,11 @@ const productModel = {
 const categoryModel = {
     type: String
 };
-const imageModel = {
-    type: String
-};
+
 
 
 const product = mongoose.model("product", productModel);
 const category = mongoose.model("category", categoryModel);
-const image = mongoose.model("image", imageModel);
 
 // Routes index--------------------------------------------
 app.route("/")
@@ -207,7 +204,6 @@ app.route('/:id')
                         modele: docs.modele,
                         price: docs.price,
                         category: cat,
-                        image: docs.image
                     })
                 })
 
@@ -230,7 +226,6 @@ app.route('/:id')
                 modele: req.body.modele,
                 price: req.body.price,
                 category: req.body.category,
-                image: req.body.image
             },
             //option------------
             {
@@ -259,6 +254,25 @@ app.route('/:id')
             }
         })
     });
+
+app.route('/panier')
+.get((req,res) =>{
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //OUVRE LE PORT 4000
