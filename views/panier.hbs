@@ -1,4 +1,3 @@
-<a href="panier.hbs">panier</a>
 <div class="container-fluid">
     <div style="display: flex; flex-direction: center; justify-content: space-around; align-items:center; height: 1000px"
         class="row">
@@ -41,46 +40,6 @@
                         </form>
                         
                     </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- POST -->
-        <div class="col-md-6">
-            <h3>Ajouter une voiture</h3>
-            <div class="card">
-                <div class="card-body">
-
-                    <form class="formajout" method="POST" action="/" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" class="form-control" name="image">
-                        </div>
-                        <div class="form-group">
-                            <label>marque</label>
-                            <input type="text" class="form-control" name="marque">
-                        </div>
-                        <div class="form-group">
-                            <label>modele</label>
-                            <input type="text" class="form-control" name="modele">
-                        </div>
-                        <div class="form-group">
-                            <label>prix</label>
-                            <input type="text" class="form-control" name="price">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect">Catégories</label>
-                            <select class="form-control" name="category" id="exampleFormControlSelect">
-                                {{#each category}}
-                                <option value="{{this._id}}">{{this.type}}</option>
-                                {{/each}}
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">submit</button>
-                    </form>
-
-
                 </div>
             </div>
         </div>

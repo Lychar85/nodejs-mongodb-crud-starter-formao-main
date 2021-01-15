@@ -102,6 +102,7 @@ const categoryModel = {
 
 
 
+
 const product = mongoose.model("product", productModel);
 const category = mongoose.model("category", categoryModel);
 
@@ -213,7 +214,7 @@ app.route('/:id')
         })
     })
 
- //METTRE A JOUR-------- 
+    //METTRE A JOUR-------- 
     .put((req, res) => {
         product.updateOne(
             //condition------------
@@ -255,13 +256,20 @@ app.route('/:id')
         })
     });
 
+//route PANIER--------------------------------------------
 app.route('/panier')
-.get((req,res) =>{
+    .get((req, res) => {
+        if (!err) {
 
-})
-
-
-
+            product.find((err, docs) => {
+                res.render('panier', {
+                    product: docs,
+                })
+            })
+        } else {
+            res.send('err')
+        }
+    })
 
 
 

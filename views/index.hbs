@@ -4,42 +4,43 @@
         class="row">
         <!-- GET -->
 
-        <div class="col-md-6">
+        <div class="col-md-6 ">
             <h3>Liste des voitures</h3>
             <div class="card">
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         {{#each product}}
-                        
-                        
-                            <li class="list-group-item">
-                                
-                                <div>Marque: {{this.marque}}</div>
-                                <div>modele: {{this.modele}}</div>
-                                <div>Catégorie : {{this.category.type}}</div>
-                                <div>prix : {{this.price}}</div>
-                                <img src="{{this.image.path}}" alt="" style="max-width: 300px; margin-bottom:10px; border-radius:10px">
-                                <form action="{{this._id}}/?_method=DELETE" method="POST">
-                                    <button type="submit"
-                                        class="btn-effacer">efface</button>
-                                    <button
-                                        style="background: rgb(0, 35, 75); border: none; border-radius: 10px; padding: 5px;"><a
-                                            style="color: aliceblue;" href="{{this.id}}">Modifier</a></button>
-                        
-                        
+
+
+                        <li class="list-group-item get">
+
+                            <div>Marque: {{this.marque}}</div>
+                            <div>modele: {{this.modele}}</div>
+                            <div>Catégorie : {{this.category.type}}</div>
+                            <div>prix : {{this.price}}</div>
+                            <img src="{{this.image.path}}" alt="">
+                            <div class="form">
+                            <form action="{{this._id}}/?_method=DELETE" method="POST">
+                                <button type="submit" class="btn-effacer">efface</button>
+                                <button class="btn-modifier"><a href="{{this.id}}">Modifier</a></button>
+                            </form>
+                            <form action="/panier" method="POST">
+                            <button type="submit">Ajouter au panier</button>
+                            </form>
+                            </div>
                         </li>
 
 
-                        </form>
+
                         </li>
                         {{/each}}
-                        
+
                         <form action="/?_method=PUT" method="POST">
                             <div style="margin-top: 1rem">
                                 <button type="submit" class="btn btn-danger">tout effacer </button>
                             </div>
                         </form>
-                        
+
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,37 @@
+.body {
+    background-color: blanchedalmond;
+}
+
+.btn-effacer {
+    background: rgb(75, 0, 0);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: aliceblue;
+}
+
+.get {
+    background-color: s(59, 59, 59);
+}
+
+.btn-modifier {
+    background: rgb(0, 35, 75);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.btn-modifier a {
+    color: aliceblue;
+}
+
+img {
+    max-width: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+}
