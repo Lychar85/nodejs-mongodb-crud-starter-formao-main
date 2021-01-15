@@ -99,13 +99,15 @@ const productModel = {
 const categoryModel = {
     type: String
 };
-
+const panierModel = {
+    type: String
+};
 
 
 
 const product = mongoose.model("product", productModel);
 const category = mongoose.model("category", categoryModel);
-
+const panier = mongoose.model("panier",panierModel)
 // Routes index--------------------------------------------
 app.route("/")
     .get((req, res) => {
@@ -258,19 +260,18 @@ app.route('/:id')
 
 //route PANIER--------------------------------------------
 app.route('/panier')
-    .get((req, res) => {
-        if (!err) {
-
-            product.find((err, docs) => {
-                res.render('panier', {
-                    product: docs,
-                })
-            })
-        } else {
-            res.send('err')
+.get((req,res) =>{
+    panier.find({
+    _id: req.params.id
+    },(err) =>{
+        if(!err){
+            res.render('panier')
+        }else {
+            res.send(err)
         }
-    })
-
+    } 
+    )
+})
 
 
 
