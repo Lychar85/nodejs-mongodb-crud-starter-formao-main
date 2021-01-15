@@ -12,10 +12,10 @@ const express = require('express'),
 app.use(methodOverride("_method"));
 
 
+//--------------------------------------------
+app.use(express.static(__dirname + "/public"));
+
 //ajout image--------------------------------------------
-app.use(express.static("public"));
-
-
 const storage = multer.diskStorage({
         destination: (req, file, cb) => {
             console.log(file);
